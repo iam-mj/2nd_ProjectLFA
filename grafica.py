@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import networkx as nx
-from netgraph import Graph
+from netgraph import InteractiveGraph
 
 
 def desen(QL, D, qi, F):
@@ -33,8 +33,9 @@ def desen(QL, D, qi, F):
         else:
             colors[nod] = '#63a0d4'
     
-    Graph(G, node_layout = pos, edge_layout = 'curved', origin = (-1, -1), scale = (2, 2),
+    instance = InteractiveGraph(G, node_positions = pos, edge_positions = pos, edge_layout = 'curved', origin = (-1, -1), scale = (2, 2),
         node_color = colors, node_size = 8, node_labels = True, node_label_fontdict = dict(size = 10),
         edge_labels = edge_labels, edge_label_fontdict = dict(size = 10), edge_label_position = 0.7, arrows = True
     )
     plt.show()
+    
