@@ -18,14 +18,14 @@ while vremSaVerificam:
     CNT = 0 #contorizeaza expresiile "globale" (cele dintre paranteze, a caror rezultate vor fi notate intre $$)
 
     #parcurgem expresia si incepem sa extindem automatul
-    if expresie == "": #multimea vida
+    if expresie == '': #multimea vida
         automat_final = Automat(['q0'], [], 'q0', [])
         print(automat_final)
-        desen(automat_final.Q, automat_final.D, automat_final.qi, automat_final.F)
+        print("Avem un automat pentru multimea vida, dar nu putem desena un automat fara muchii =(")
     elif expresie == " ": #lambda
         automat_final = Automat(['q0'], [], 'q0', ['q0'])
         print(automat_final)
-        desen(automat_final.Q, automat_final.D, automat_final.qi, automat_final.F)
+        print("Avem un automat pentru cuvantul vid, dar nu putem desena un automat fara muchii =(")
     elif len(expresie) == 1: #o singura litera
         automat_final = automat_litera(expresie[0])
         print(automat_final)
